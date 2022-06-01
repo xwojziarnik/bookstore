@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'bookshelf',
 ]
 
 MIDDLEWARE = [
@@ -72,11 +74,32 @@ WSGI_APPLICATION = 'bookstore.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+"""
+To get everything right with MySQL connection, use command:
+export PATH=$PATH:/usr/local/mysql/bin
+
+than type command:
+pip install mysqlclient==2.1.0 
+
+source:
+https://stackoverflow.com/questions/5178292/pip-install-mysql-python-fails-with-environmenterror-mysql-config-not-found
+
+next, if you see error:
+
+'_mysql' is not defined
+
+Here's the solution:
+https://stackoverflow.com/questions/63109987/nameerror-name-mysql-is-not-defined-after-setting-change-to-mysql
+"""
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bookstore',
+        'USER': 'root',
+        'PASSWORD': 'Ziarqwe123!',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 

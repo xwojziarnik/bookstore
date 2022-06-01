@@ -1,4 +1,7 @@
 /venv
 /.idea
-/bookstore/__pycache__/__init__.cpython-310.pyc
-/bookstore/__pycache__/settings.cpython-310.pyc
+/bookstore/__pycache__/
+/bookshelf/__pycache__/
+/bookshelf/migrations/__pycache__
+/users/__pycache__
+/users/migrations/__pycache__

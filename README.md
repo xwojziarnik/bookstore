@@ -22,7 +22,8 @@ I want to:
 - Get to know Django & Django Rest framework better,
 - Learn how to implement tests,
 - Write an app using public API,
-- Get to know how to host app using Docker
+- Get to know how to host app using Docker,
+- Learn how to use different database than default SQLite3
 
 ## Features
 
