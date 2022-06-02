@@ -16,16 +16,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_!0w5mg!i&(g0)4vi_fphh3m@hq=&u^gejl51!6!3_o+3b4q44'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+SECRET_KEY = 'bookstore.django_key'
+DEBUG = 'bookstore.django_key'
+ALLOWED_HOSTS = 'bookstore.django_key'
 
 
 # Application definition
@@ -92,16 +85,7 @@ Here's the solution:
 https://stackoverflow.com/questions/63109987/nameerror-name-mysql-is-not-defined-after-setting-change-to-mysql
 """
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bookstore',
-        'USER': 'root',
-        'PASSWORD': 'Ziarqwe123!',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+DATABASES = 'bookstore.django_key'
 
 
 # Password validation

@@ -5,3 +5,4 @@
 /bookshelf/migrations/__pycache__
 /users/__pycache__
 /users/migrations/__pycache__
+/bookstore/django_key.py
