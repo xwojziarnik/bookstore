@@ -9,17 +9,29 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os.path
 from pathlib import Path
+import json
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-SECRET_KEY = 'bookstore.django_key'
-DEBUG = 'bookstore.django_key'
-ALLOWED_HOSTS = 'bookstore.django_key'
+# SECURITY WARNING: keep the secret key used in production secret!
+with open(os.path.join(BASE_DIR, 'bookstore/secret.json')) as secret_file:
+    secret = json.load(secret_file)
 
+SECRET_KEY = secret["SECRET_KEY"]
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -85,8 +97,16 @@ Here's the solution:
 https://stackoverflow.com/questions/63109987/nameerror-name-mysql-is-not-defined-after-setting-change-to-mysql
 """
 
-DATABASES = 'bookstore.django_key'
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bookstore',
+        'USER': 'root',
+        'PASSWORD': secret["PASSWORD"],
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
