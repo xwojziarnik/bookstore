@@ -11,6 +11,7 @@ Login
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Login">
+    <p>If you don't have an account, click <a href="{% url 'sign_up' %}">here</a></p>
 </form>
 
 <a href="{% url 'dashboard' %}">Back to dashboard</a>

@@ -94,6 +94,8 @@ next, if you see error:
 
 Here's the solution:
 https://stackoverflow.com/questions/63109987/nameerror-name-mysql-is-not-defined-after-setting-change-to-mysql
+
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 """
 
 DATABASES = {
