@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os.path
 from pathlib import Path
 import json
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -97,6 +98,8 @@ https://stackoverflow.com/questions/63109987/nameerror-name-mysql-is-not-defined
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 """
+
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
