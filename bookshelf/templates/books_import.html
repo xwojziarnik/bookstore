@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Books import
+{% endblock %}
+
+{% block content %}
+<h3>Input keyword (i.e. name or last name of author / title of the book</h3>
+    {% csrf_token %}
+    <div>
+        <input type="text">
+        <button type="submit" name="query_arg" class="btn btn-success">Search</button>
+        {{query_arg}}
+    </div>
+{% endblock %}

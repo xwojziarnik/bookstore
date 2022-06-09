@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users.views import dashboard, SignUp
-from bookshelf.views import download_books_from_api
+from bookshelf.views import BooksImport, testing_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
     path('sign-up/', SignUp.as_view(), name='sign_up'),
     path('dashboard/', dashboard, name='dashboard'),
-    path('import/', download_books_from_api, name='import'),
+    path('import/', BooksImport.as_view(), name='books_import'),
+    path('import-books/', testing_view, name='testing_view'),
 ]
